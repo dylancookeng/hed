@@ -16,7 +16,7 @@ sys.path.insert(0,caffe_root+'python')
 import caffe
 
 #data_root = '../../data/HED-BSDS/'
-data_root = '../../data/report/'
+data_root = '../../data/myimages/'
 with open(data_root+'test.lst') as f:
 	test_lst = f.readlines()
 
