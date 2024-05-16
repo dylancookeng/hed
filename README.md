@@ -12,7 +12,7 @@ Forked from [GitHub - s9xie/hed: code for Holistically-Nested Edge Detection](ht
 * Ubuntu system (WSL with Ubuntu 22.04)
 	+ Run `wsl --install` in Admin CMD
 * Clone the repo
-	+ `git clone https://Ditchwitch-RD@dev.azure.com/Ditchwitch-RD/Automation%20Platform/_git/hed`
+	+ `git clone https://github.com/dylancookeng/hed.git`
 	+ `cd hed`
 
 #### Install Dependencies
