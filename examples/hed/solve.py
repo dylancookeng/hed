@@ -47,8 +47,8 @@ interp_layers = [k for k in solver.net.params.keys() if 'up' in k]
 interp_surgery(solver.net, interp_layers)
 
 # copy base weights for fine-tuning
-#solver.restore('dsn-full-res-3-scales_iter_29000.solverstate')
-solver.net.copy_from(base_weights)
+# solver.restore('hed_bsds.solverstate')
+solver.net.copy_from('hed_bsds.caffemodel')
 
 # solve straight through -- a better approach is to define a solving loop to
 # 1. take SGD steps

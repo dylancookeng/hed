@@ -7,8 +7,8 @@ from PIL import Image
 import scipy.io
 import os
 
-def plot_list(imgs, title, size=(12,4), single=False):
-	fig, axs = plt.subplots(1, len(imgs), figsize=size)
+def plot_list(imgs, title, size=(16,8), single=False):
+	fig, axs = plt.subplots(2, len(imgs)//2 + (len(imgs) % 2 != 0), figsize=size)
 	if single:
 		axs.imshow(imgs[0], cmap='gray')
 		axs.set_xticklabels([])
@@ -16,13 +16,15 @@ def plot_list(imgs, title, size=(12,4), single=False):
 		axs.yaxis.set_ticks_position('none')
 		axs.xaxis.set_ticks_position('none')
 	else:
-		for i in range(0, len(imgs)):
-			axs[i].imshow(imgs[i], cmap='gray')
-			axs[i].set_title('{}'.format(i))
-			axs[i].set_xticklabels([])
-			axs[i].set_yticklabels([])
-			axs[i].yaxis.set_ticks_position('none')
-			axs[i].xaxis.set_ticks_position('none')
+		for i, ax in enumerate(axs.flat):
+			if i >= len(imgs):
+				break
+			ax.imshow(imgs[i], cmap='gray')
+			ax.set_title('{}'.format(i))
+			ax.set_xticklabels([])
+			ax.set_yticklabels([])
+			ax.yaxis.set_ticks_position('none')
+			ax.xaxis.set_ticks_position('none')
 	fig.suptitle(title)
 	return fig
 
